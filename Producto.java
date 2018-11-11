@@ -45,21 +45,19 @@ public class Producto {
 	}
 
 
-
-	
 	
 	//METODOS
-	
-	
-	
-	
-	
-	
-	
-	
+	// obtendra el precio segun la condicion especifica que tengo el producto
+	public double variacionPrecioProducto() {
+		return 0.0;
+	}
+
+
 	@Override
 	public String toString() {
-		return "";
+		return "Nombre de producto: " + nombreProducto + 
+			   "\nCodigo de Barras: " + codigoBarras + 
+			   "\nPrecio: " + precio;
 	}
 
 
