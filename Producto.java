@@ -1,12 +1,17 @@
 package uF4.practicas._07_11_18carroCompra;
 
+
+
 public class Producto {
 	
 	private String codigoBarras;
-	private double precio;
+	protected double precio;
 	private String nombreProducto;
 	
 	//CONSTRUCTOR
+	
+	
+	
 	public Producto (String nombreProducto, String codigoBarras, double precio) {
 		this.codigoBarras = codigoBarras;
 		this.precio = precio;
@@ -52,6 +57,28 @@ public class Producto {
 		return 0.0;
 	}
 
+	
+	
+	
+	
+	public double calcularPrecio() {
+		double calculoPrecio = 0;
+		calculoPrecio = calculoPrecio + precio;
+
+		return calculoPrecio;	
+	}
+	
+	
+	public int cantidadUnidades() {
+		int contador = 0;
+		if (codigoBarras.equals(codigoBarras)) {
+			contador++;
+		}
+		return contador;
+	}
+	
+	
+	
 
 	@Override
 	public String toString() {

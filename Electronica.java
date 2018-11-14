@@ -1,6 +1,8 @@
 package uF4.practicas._07_11_18carroCompra;
 
-public class Electronica extends Producto{
+import java.time.LocalDate;
+
+public class Electronica extends Producto implements Vendible{
 
 	private int diasGarantia;
 	
@@ -8,6 +10,7 @@ public class Electronica extends Producto{
 	public Electronica(String nombreProducto, String codigoBarras, double precio, int diasGarantia) {
 		super(nombreProducto, codigoBarras, precio);
 		this.diasGarantia = diasGarantia;
+		setPrecio(variacionPrecioProducto());
 	}
 
 	
@@ -28,7 +31,6 @@ public class Electronica extends Producto{
 	public double variacionPrecioProducto() {
 		double precioSegunGarantia;
 		precioSegunGarantia = getPrecio() + getPrecio() * (getDiasGarantia() / 365.0) * 0.1;
-		
 		return Math.round(precioSegunGarantia * 100d) / 100d;
 	}
 	
@@ -39,6 +41,13 @@ public class Electronica extends Producto{
 			   "\nCodigo de Barras: " + getCodigoBarras() + 
 			   "\nPrecio: " +  variacionPrecioProducto() + 
 			   "\nDias de Garantia: " + getDiasGarantia();
+	}
+
+
+	@Override
+	public void esVendible(LocalDate fechaCaducidad) {
+		
+		
 	}
 	
 }
